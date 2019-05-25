@@ -20,7 +20,7 @@ parser.add_argument("-m", "--mode", dest="mode", help="mode. spdb, cmb, futu", m
 parser.add_argument("-f", "--file", dest="file", help="input file, json or csv", metavar="LOCAL")
 options = parser.parse_args()
 
-with open('./gears/config.json', encoding="UTF-8") as fd:
+with open(path.join(sys.path[0], 'config.json'), encoding="UTF-8") as fd:
     conf = json.loads(fd.read())
 
 COMM_EXP_TMPL = """%s * %s
